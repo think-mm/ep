@@ -1,0 +1,141 @@
+/*
+  Custom css for our landing page
+
+*/
+
+body {
+  font-family: Robot, 'PT Sans', Arial, Helvetica, sans-serif;
+  color: #545454;
+  background-image: url("../pic/bg-thinker.jpg");
+  
+  /* 
+    Following section is brought to adjust the background
+    ref: http://sixrevisions.com/css/responsive-background-image/
+    Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size
+  background-size: cover;
+    ref: http://stackoverflow.com/questions/376253/stretch-and-scale-css-background
+  */
+  background-size: 100% 100%;
+
+  overflow-x: hidden; /* Removes horizontal scrollbar*/
+  /* required to be disabled for both Chrome and IE
+  background: #fefefe; */
+  /* Margin bottom by footer height
+    Probably not required anymore
+    have to experiment
+  margin-bottom: 6em; */
+}
+
+/* we put our personalized style for the site here */
+#content-wrapper {
+  margin: auto; /* some vertical space on left and right */
+  max-width: 1280px;
+  /* min-height: 768px; not required - body has margin-bottom */
+  padding-bottom: 2em;
+}
+
+/*
+  .site-content contains two elements
+   - site header (contains logo)
+   - site navs (navigation links)
+  Removed navbar related styles
+  Right alignment for this wrapper
+  Ref:
+    http://stackoverflow.com/questions/7693224/how-do-i-right-align-div-elements
+*/
+#content-wrapper .site-content {
+  max-width: 1080px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-left:auto;
+  margin-right:0;
+}
+
+/* align logo center
+  descendent of header, logo class and img tag
+  site-header is unique id for a div
+*/
+#site-header {
+  float: right;
+  padding-top: 10%; /* change propertional to screen height: fix it later */
+  padding-bottom: 10px; /* Fix it later */
+  padding-right: 20px; /* Fix it later */
+  /* top: 30%;
+    */
+}
+
+#site-header img {
+  display: block;
+  margin: auto;
+  padding-bottom: 2em;
+  height: 7em; /* scale out image */
+}
+
+/* style for navigation links */
+#site-navs {
+  /* float:right; */
+  font-family:  'Antic Slab', Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  padding-bottom: 10%; /* change propertional to screen height: fix it later */
+}
+
+#site-navs .nav-lines {
+  float: right; /*ref: http://stackoverflow.com/questions/10431037/css-right-aligned-list*/
+  clear: both;
+  margin: auto;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  /*
+   list-style-position: inside;
+  */
+}
+
+/* items except the last one will have border 
+   ref: http://stackoverflow.com/questions/11918491/using-two-css-classes-on-one-element
+   ref for bottom border:
+   http://stackoverflow.com/questions/1969236/add-a-bottom-border-to-a-div
+*/
+#site-navs .nav-lines.not-last {
+  border-width: 1px;
+  border-bottom-width:1px;
+  border-bottom-color: #3a3939;
+  border-bottom-style: solid;
+}
+
+/* set style for first item
+*/
+#site-navs .nav-lines li:first-child {
+  background: none;
+}
+
+#site-navs .nav-lines li {
+  float: left; /* ref: http://stackoverflow.com/questions/10642815/li-ul-newline */
+  text-indent: 0.8em;
+  padding-right: 0.5em;
+  list-style: none; /* ref: http://stackoverflow.com/questions/19514138/unordered-list-with-bullets-after-first-list-item */
+  /* Adjust list style image position?
+    http://stackoverflow.com/questions/1708833/adjust-list-style-image-position
+  */
+  background: url(../pic/bullet.png) no-repeat left center;
+}
+
+#site-navs .nav-lines > li > a {
+  color: #4a4949;
+  text-decoration: none !important; /* Ref: http://stackoverflow.com/questions/4150780/removing-underline-from-specific-anchor-tag */
+}
+
+#site-navs .nav-lines > li > a:hover, a:hover {
+  color: #a0ce4e;
+  text-decoration: none; /* removes underline during hover*/
+}

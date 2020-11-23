@@ -1,0 +1,290 @@
+body {
+  font-family: Robot, 'PT Sans', Arial, Helvetica, sans-serif;
+  color: #545454;
+  background: #000000;
+  overflow-x: hidden; /* Removes horizontal scrollbar*/
+  /* Margin bottom by footer height
+  margin-bottom: 6em; */
+  height: 100%;
+}
+
+#site-wrapper {
+  margin: auto; /* some vertical space on left and right */
+  padding: 0px 0.5em 0px;
+  max-width: 1302px;
+  background: #fefefe;
+}
+
+#site-wrapper .container {
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/* bg-color */
+.navbar-default {
+  background-color: #5c5c5c; /* previous: 050505;*/
+}
+
+/* menu item text color */
+.navbar-default .navbar-nav > li > a {
+  color: #eee;
+}
+.navbar-default .navbar-nav > li > a:hover, a:hover {
+  color: #a0ce4e;
+  text-decoration: none; /* removes underline during hover*/
+}
+/* enforce color for links */
+a {
+  color: #2a2a2a;
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.sidebar {
+/* Add style for left side bar */
+}
+
+.widget {
+  padding: 1em 1em;
+  background-color: #e6e7e8;
+  margin-bottom: 1.5em;
+}
+
+.sidebar .widget img {
+  display: block;
+  margin: auto;
+  padding-bottom: 1em;
+  width: 100%; /* full width of containing block */
+}
+
+content-wrapper {
+/* style for content on the right side*/
+}
+
+#content-wrapper .content-article {
+  max-width: 600px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: auto;
+}
+
+#content-wrapper article p {
+  line-height: 1.4em;
+}
+
+/*
+  site-header:
+   is the placement for navbar and the logo
+   Code for this element is put by 'add_navbar.js'
+ */
+
+/*
+  align logo center
+  descendant of header, logo class and img tag
+  site-header is unique id for a div
+*/
+#site-header .banner img {
+  display: block;
+  margin: auto;
+  /* padding-bottom: 2em; */
+  width: 100%;
+}
+
+/* book library */
+.carousel-control {
+  padding-top:10%;
+  width:5%;
+  background-color: #eff4f5; /* no effect it seems? */
+}
+
+/* Override style for of all of this for this site to better match the font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family:  'Antic Slab', Arial, Helvetica, sans-serif;
+}
+
+/* might not be necessary - replaced by padding of site-wrapper*/
+.site-section {
+  padding: 0 0em 1em;  /* vertical space on left and right and some in the middle */
+}
+
+.site-section h2 {
+  width: 10em;
+  font-size: large;
+  color: #eeeeee;
+  background-color: #6c6c6c;
+  vertical-align: middle;
+  padding: 0.5em 1em;
+}
+
+@media (min-width: 1200px) {
+  .site-sub-section {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-gap: 3em;
+  }
+
+  .book_library .img-responsive {
+    width: 105%; /* bigger image for bigger screen */
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+  .site-sub-section {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-gap: 3em;
+  }
+}
+/* book library 
+@media (max-width: 768px) {
+  .book_library .col-sm-3 { // undo bootstrap library settings max 768px - our fix for carousel
+    float: left;
+    max-width: 25%;
+  }
+} */
+
+@media (max-width: 600px) {
+  .site-sub-section {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-gap: 3em;
+    -moz-column-gap: 3em;
+    column-gap: 3em;
+  }
+
+  .site-section {
+    padding: 0 3em 1em; /* allow more content on smaller screen */
+  }
+}
+
+/*
+favoring bootstrap typography
+.site-sub-section h2 {
+font-size: 2em;
+line-height: 5em;
+}*/
+.site-sub-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.site-sub-section li {
+  line-height: 1.5em;
+  padding-bottom: 0.8em;
+  padding-left: 0.5em;
+  text-indent: -1em;
+}
+
+.site-sub-section li:before {
+  content: "\2192";
+  padding-right: 0.8em;
+  font-weight: bold;
+}
+
+.site-sub-section {
+  padding-bottom: 1.5em;
+  text-align: left;
+  display: block;
+  color: #2c3e50;
+}
+
+/* for the footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+#site-footer {
+  position: relative;
+  bottom: 0;
+  /* width: 100%; */
+  /* Set the fixed height of the footer here 
+     however this is causing problem in 
+  */
+  height: 6em;
+  line-height: 2em; /* vertical space among lines */
+  /* background-color: #4c4c4c; */
+  background-color: #111111;
+}
+
+#site-footer > .container {
+  width: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align:center;
+}
+
+/* why do we need code here?
+  code {
+  font-size: 80%;
+}*/
+
+/* social icons */
+.social:hover {
+   -webkit-transform: scale(1.1);
+   -moz-transform: scale(1.1);
+   -o-transform: scale(1.1);
+ }
+.social {
+  -webkit-transform: scale(0.8);
+  /* Browser Variations: */
+
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+.copy-right-text {
+  padding-top: 10px;
+}
+
+.social-icons {
+  /* put vertical space  
+    complext chemistry had to set a height 20px in row style manually more than line-height to make this work
+  */
+  padding-top: 20px;
+}
+
+/*
+   Multi-colored Hover Variations
+*/
+#social-fb:hover {
+  color: #3B5998;
+}
+#social-tw:hover {
+  color: #4099FF;
+}
+#social-gp:hover {
+  color: #d34836;
+}
+#social-em:hover {
+  color: #f39c12;
+}

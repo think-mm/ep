@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <title>মুক্তমনা </title>
+  <script type="text/javascript">
+    if (!('import' in document.createElement('link'))) {
+      document.write('\x3Cscript type="text/javascript" src="../common/js/HTMLImports.min.js">\x3C/script>');
+    }
+  </script>
+  <link rel="import" href="../common/template.html">
+  <link rel="import" href="navbar.html" id="template_1">
+  <link rel="import" href="sidebar.html" id="template_2">
+  <link rel="import" href="../common/footer.html" id="template_3">
+</head>
+
+<body>
+<div id="site-wrapper">
+  <div id="site-header"></div>
+  <script src="../common/js/add_navbar.js"></script>
+
+  <div class="container">
+    <div class="row">
+      <div id="site-sidebar"></div>
+      <script src="../common/js/add_sidebar.js"></script>
+
+      <div class="col-lg-13 col-md-8 col-sm-12">
+        <div id="content-wrapper">
+          <!--content starts here-->
+          <div class="site-section">
+            <h2>Normalize Unicode String </h2>
+            <h4>Input</h4>
+            <textarea id="in_textarea" rows="10" cols="100" onclick="this.focus();this.select()">Please enter your text here and click the convert button below.</textarea>
+
+            <h4>Normalized NFC Output</h4>
+            <textarea id="out_textarea" rows="10" cols="100" onclick="this.focus();this.select()" readonly="readonly">Normalized output text will appear here</textarea>
+
+            <button type="button" class="btn btn-default center-block" onclick="normNFCFunc(document.getElementById('in_textarea'), document.getElementById('out_textarea'))">
+              Convert
+            </button>
+            <script>
+              function normNFCFunc(in_textarea, out_textarea) {
+                out_textarea.value = in_textarea.value.normalize('NFC');
+              }
+            </script>
+
+            <div style="padding-bottom:5em;">&nbsp;</div>
+
+            <footer>
+              <p><small>N.B: Works only with ECMA Script 6 supported browsers.</small></p>
+            </footer>
+          </div>
+        </div> <!--content ends here-->
+      </div>
+    </div>
+  </div>
+
+  <footer id="site-footer"></footer>
+  <script src="../common/js/add_footer.js"></script>
+</div>
+</body>
+</html>
